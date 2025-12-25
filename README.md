@@ -93,7 +93,7 @@ We aim to model and predict lead contamination in Toronto using a postal-area gr
 - **Training:** Preceding 3 years, Adam optimizer, 200 epochs, MSE loss on labeled nodes  
 - **Output:** Normalized lead predictions per postal code  
 
-``python
+```python
 # Example: PyTorch Geometric GAT setup
 import torch
 from torch_geometric.nn import GATConv
@@ -107,6 +107,7 @@ class LeadGAT(torch.nn.Module):
         x = self.conv1(x, edge_index).elu()
         x = self.conv2(x, edge_index)
         return x
+```
 
 ## Edge-Level Pipe Analysis
 - Average GAT predictions of endpoint nodes for each pipe.
